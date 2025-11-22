@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "gemini-helper" 
+version = "0.1.0"
+description = "Asistente de consola para Gemini Flash."
+authors = ["Mateo Liberatore <liberatoremate98@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "gemini_asistente"}] 
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+]
+
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+click = "^8.1.7"
+rich = "^13.7.0"
+google-genai = "^0.1.0"
+python-dotenv = "^1.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

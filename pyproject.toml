@@ -1,27 +1,27 @@
 [tool.poetry]
-name = "gemini-helper" 
+name = "gemini-helper"
 version = "0.1.0"
-description = "Asistente de consola para Gemini Flash."
-authors = ["Mateo Liberatore <liberatoremate98@gmail.com>"]
+description = "Asistente de consola para Gemini Flash (Typer migration)."
+authors = ["Mateo Liberatore"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "gemini_asistente"}] 
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
-]
 
+packages = [
+    { include = "gemini_helper", from = "src" }
+]
 
 [tool.poetry.dependencies]
 python = ">=3.11"
-click = "^8.1.7"
+typer = "^0.9.0"
 rich = "^13.7.0"
-google-genai = "^0.1.0"
+google-genai = { version = "^0.1.0", optional = true }
 python-dotenv = "^1.0.0"
 
+[tool.poetry.extras]
+genai = ["google-genai"]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.4.2"
+[tool.poetry.scripts]
+gemini = "gemini_helper.cli.main:app"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

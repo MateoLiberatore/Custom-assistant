@@ -1,10 +1,10 @@
-import os
+from .config import load_config
+_cfg = load_config()
 
-CHATS_DIR = "chats"
-
-DEFAULT_MODEL = "gemini-2.5-flash"
-DEFAULT_TEMPERATURE = 0.5
-DEFAULT_SYSTEM_PROMPT = "You are a helpful and concise console assistant."
+CHATS_DIR = _cfg["CHATS_DIR"]
+DEFAULT_MODEL = _cfg["DEFAULT_MODEL"]
+DEFAULT_TEMPERATURE = _cfg["DEFAULT_TEMPERATURE"]
+DEFAULT_SYSTEM_PROMPT = _cfg["DEFAULT_SYSTEM_PROMPT"]
 
 METADATA_START_TAG = "# METADATA_START"
 METADATA_END_TAG = "# METADATA_END"
